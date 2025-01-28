@@ -1,4 +1,7 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android' // Make sure this line exists
+}
 
 android {
     namespace "org.getoutline.pwa"
@@ -21,6 +24,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 
